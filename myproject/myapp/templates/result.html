@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Results</title>
+</head>
+<body>
+    <h1>Analysis Results</h1>
+<div class="results"> 
+    
+    <h2>Block Detection</h2>
+    <ul>
+        {% for item in results.block_detection %}
+            <li>{{ item.server }}: {{ item.isBlocked }}</li>
+        {% endfor %}
+    </ul>
+</div> 
+<div class="results"> 
+    <h2>Wayback Analysis</h2>
+    <pre>{{results.wayback_analysis}}
+</div>     
+<div class="results">   
+    <h2>Carbon Footprint</h2>
+        {% if results.carbon_footprint %}
+        
+            <pre>{{ results.carbon_footprint|safe }}</pre>
+        {% else %}
+            <p>No data available.</p>
+        {% endif %}
+</div>
+<div class="results">
+            <h2>Subdomain Detection</h2>
+            <pre>{{results.subdomain_detection}}
+</div>
+<div class="results">
+    <h2>Cookies Detection</h2>
+    <pre>{{ results.cookies_detection }}</pre>  <!-- Display the formatted cookies result -->
+</div>
+<div class="results">
+    <h2>Robot.txt</h2>
+    <pre>{{results.robots_txt}}</pre>
+</div>
+<div class="results">
+    <h2>DNS Records</h2>
+    <pre>{{results.dns_records}}</pre>
+
+</div>
+<div class="results">
+    <h2>DNS Servers</h2>
+    <pre>{{results.dns_server}}</pre>
+</div>
+<div class="results">
+    <h2>DNSSEC</h2>
+    <pre>{{results.dnssec}}</pre>
+</div>
+<div class="results">
+    <h2>Email Configurations</h2>
+    <pre>{{results.email_conf}}</pre>
+</div>
+<div class="results">
+    <h2>Site Features</h2>
+    <pre>{{results.features}}</pre>
+</div>
+
+<div class="results">
+    <h2>Firewall</h2>
+    <pre>{{results.firewall}}</pre>
+</div>
+<div class="results">
+    <h2>HTTP Headers</h2>
+    <pre>{{results.headers}}</pre>
+</div>
+<div class="results">
+    <h2>HSTS</h2>
+    <pre>{{results.HSTS}}</pre>
+</div>
+
+<div class="results">
+    <h2>HTTP Security</h2>
+    <pre>{{results.HTTP_security}}</pre>
+</div>
+
+<div class="results">
+    <h2>Linked Pages</h2>
+    <pre>{{results.Linked_pages}}</pre>
+</div>
+
+<div class="results">
+    <h2>Server Location</h2>
+    <pre>{{results.Location}}</pre>
+</div>
+
+<div class="results">
+    <h2>Open Ports</h2>
+    <pre>{{results.open_ports}}</pre>
+</div>
+
+<div class="results">
+    <h2>Site  Redirects</h2>
+    <pre>{{results.redirect}}</pre>
+</div>
+
+<div class="results">
+    <h2>Security TXT</h2>
+    <pre>{{results.Security_txt}}</pre>
+</div>
+
+
+
+
+
+<div class="results">
+    <h2>Social Tags</h2>
+    <pre>{{results.social_tags}}</pre>
+</div>
+
+
+<div class="results">
+    <h2>SSL Certificate</h2>
+    <pre>{{results.SSL}}</pre>
+</div>
+
+
+<div class="results">
+    <h2>Web Technology</h2>
+    <pre>{{results.Web_tech}}</pre>
+</div>
+
+
+<div class="results">
+    <h2>Threath Analysis</h2>
+    <pre>{{results.VT}}</pre>
+</div>
+
+
+<div class="results">
+    <h2>TLS Cipher Suites</h2>
+    <pre>{{results.TLS_Cipher_suites}}</pre>
+</div>
+
+
+<div class="results">
+    <h2>Site Status</h2>
+    <pre>{{results.site_status}}</pre>
+</div>
+
+
+<div class="results">
+    <h2>Website Globalrank</h2>
+    <pre>{{results.web_rank}}</pre>
+</div>
+
+
+<div class="results">
+    <h2>TXT Records</h2>
+    <pre>{{results.TXT_records}}</pre>
+</div>
+
+
+<div class="results">
+    <h2>Site Information</h2>
+    <pre>{{results.Who_is}}</pre>
+</div>
+
+
+    
+    
+
+    <a href="/">Go back</a>
+</body>
+</html>
