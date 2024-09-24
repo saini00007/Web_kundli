@@ -1,0 +1,94 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111111; /* Slightly lighter black for less harsh contrast */
+}
+.navbar {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for "Web" and "Kundli" in the navbar */
+.web {
+    color: white; 
+    font-size: 3em;
+    font-family: Verdana; /* Color for "Web" */
+}
+
+.kundli {
+    color: #dc1111;
+    font-family: Verdana; 
+    font-size: 2.5em;
+    margin-left: 20px; /* Color for "Kundli" (blue) */
+}
+
+
+h2 {
+    text-align: center;
+    color: #FF3333; /* Bright red for the heading color */
+    margin-top: 40px;
+    margin-bottom: 30px; /* Add margin for spacing at the top */
+}
+
+/* Container for two sections side by side */
+.container {
+    display: flex;
+    justify-content: center; /* Center the flex items (i.e., .results sections) horizontally */
+    flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
+    gap: 20px; /* Add space between the .results sections */
+    padding: 20px; /* Add padding around the container */
+}
+
+.results {
+    flex: 1; /* Allow each section to grow and take available space */
+    min-width: 300px; /* Ensure the sections have a minimum width */
+    max-width: 400px;
+    min-height: 200px; /* Set the maximum width for each section */
+    max-height: 600px; /* Maximum height for each section */
+    overflow: auto; /* Enable scrolling if content exceeds max height */
+    margin: 20px; /* Add margin for spacing */
+    padding: 15px; /* Slightly more padding for content breathing space */
+    background-color: #221e1e; /* Dark gray for better contrast */
+    color: #FFFFFF; /* Text color for content */
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 4px 8px rgba(112, 153, 187, 0.7); /* Slightly stronger shadow for better depth */
+}
+
+.results h2 {
+    color: #FF3333; /* Brighter red for headings */
+    margin: 0; /* Remove default margin */
+    padding: 10px 0; /* Padding for spacing */
+     /* Dark gray background for headings */
+    border-radius: 5px 5px 0 0; /* Rounded corners for top */
+    text-align: center; /* Center align the heading */
+}
+
+.results pre {
+     /* Dark gray for the content background */
+    padding: 10px; /* Padding for content */
+    border-radius: 5px; /* Rounded corners for content */
+    overflow: auto; /* Enable scrolling if content exceeds container */
+    white-space: pre-wrap; /* Allow text wrapping */
+    word-wrap: break-word; /* Prevent long words from overflowing */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .results {
+        max-height: 300px; /* Reduce max height for tablets */
+        flex-basis: 100%; /* Make each section full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .results {
+        max-height: 200px; /* Further reduce max height for mobile */
+        flex-basis: 100%; /* Make each section full width on mobile */
+        margin: 5px auto; /* Adjust margin for mobile */
+        padding: 10px; /* Slightly reduce padding for mobile */
+    }
+}

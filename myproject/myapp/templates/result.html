@@ -1,12 +1,19 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analysis Results</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/2.css' %}">
 </head>
-<body>
-    <h1>Analysis Results</h1>
+<body >
+    <div class="navbar">
+        <span class="web">Web</span><span class="kundli">Kundali</span>
+    </div>
+    <h2>Analysis Results</h1>
+<div class="container">
 <div class="results"> 
     
     <h2>Block Detection</h2>
@@ -162,7 +169,7 @@
     <h2>Site Information</h2>
     <pre>{{results.Who_is}}</pre>
 </div>
-
+</div>
 
     
     

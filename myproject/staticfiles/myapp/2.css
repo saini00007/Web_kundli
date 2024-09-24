@@ -1,0 +1,50 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: red; /* Heading color */
+}
+
+.results {
+    max-height: 300px; /* Maximum height for each section */
+    overflow: auto; /* Enable scrolling if content exceeds max height */
+    margin: 20px; /* Add margin for spacing */
+    padding: 10px;
+    background-color: black; /* Background for each section */
+    color: white; /* Text color for content */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
+.results h2 {
+    color: red; /* Heading color */
+    margin: 0; /* Remove default margin */
+    padding: 10px 0; /* Padding for spacing */
+}
+
+.results pre {
+    background-color: gray; /* Background color for content */
+    padding: 10px; /* Padding for content */
+    border-radius: 5px; /* Rounded corners for content */
+    overflow: auto; /* Enable scrolling if content exceeds container */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .results {
+        max-height: 200px; /* Reduce max height for smaller screens */
+        margin: 10px; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .results {
+        max-height: 150px; /* Further reduce max height for mobile */
+        margin: 5px; /* Adjust margin for mobile */
+    }
+}

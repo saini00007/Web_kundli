@@ -1,15 +1,38 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>URL Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/1.css' %}">
+    <script src="{% static 'myapp/1.js' %}" defer></script>
 </head>
-<body>
-    <h1>Enter a URL for Analysis</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="url">URL:</label>
-        <input type="text" id="url" name="url" required>
-        <button type="submit">Analyze</button>
-    </form>
+<body >
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loader"></div>
+    </div>
+    
+
+    <!-- Background video section -->
+    <video autoplay muted loop id="background-video">
+        <source src="{% static 'myapp/background.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <div class="navbar">
+        <span class="web">Web</span><span class="kundli">Kundali</span>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+        <div style="text-align: center;">
+            <h1 style="color: white;">Attack Surface Management TooL.</h1>
+            <form method="post" style="margin-top: 20px;">
+                {% csrf_token %}
+                <input type="text" id="url" name="url" placeholder="Enter URL..." required style="padding: 10px; width: 300px; border-radius: 25px; border: 1px solid #ddd;">
+                <button type="submit" style="padding: 10px 20px; border-radius: 25px; background-color: red ; color: white; border: none;">Enter</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>

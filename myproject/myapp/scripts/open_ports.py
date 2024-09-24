@@ -23,12 +23,13 @@ def get_open_ports(ip):
     return open_ports
 
 def format_open_ports_result(open_ports):
+    formatted_result = ""
    
     
    
     if open_ports:
         for port in open_ports:
-            formatted_result = f"Port {port} is open  \n"
+            formatted_result += f"Port {port} is open  \n"
     else:
         formatted_result += "  No open ports found.\n"
     

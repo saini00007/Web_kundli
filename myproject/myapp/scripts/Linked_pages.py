@@ -31,8 +31,7 @@ def handler(url):
             elif href.startswith(('http://', 'https://')):
                 external_links_map[absolute_url] = external_links_map.get(absolute_url, 0) + 1
 
-        print(f"Found {len(internal_links_map)} internal links and {len(external_links_map)} external links.")
-
+        
         # Sort by most occurrences
         internal_links = sorted(internal_links_map.keys(), key=lambda k: internal_links_map[k], reverse=True)
         external_links = sorted(external_links_map.keys(), key=lambda k: external_links_map[k], reverse=True)
