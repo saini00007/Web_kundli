@@ -57,14 +57,15 @@ async def fetch_wayback_data(session, url):
             average_page_size = get_average_page_size(data)
             scan_frequency = get_scan_frequency(first_scan, last_scan, total_scans, change_count)
 
-            return {
-                'First Scan': first_scan.strftime("%Y-%m-%d %H:%M:%S"),
-                'Last Scan': last_scan.strftime("%Y-%m-%d %H:%M:%S"),
-                'Total Scans': total_scans,
-                'Change Count': change_count,
-                'Avg Size': average_page_size,
-                'Avg Scans per Day': scan_frequency['Scans Per Day']
-            }
+            return (
+    f"First Scan: {first_scan.strftime('%Y-%m-%d %H:%M:%S')}\n"
+    f"Last Scan: {last_scan.strftime('%Y-%m-%d %H:%M:%S')}\n"
+    f"Total Scans: {total_scans}\n"
+    f"Change Count: {change_count}\n"
+    f"Avg Size: {average_page_size}\n"
+    f"Avg Scans per Day: {scan_frequency['Scans Per Day']}\n"
+)
+
     except Exception as e:
         return {'error': f'Error fetching Wayback data: {str(e)}'}
 
