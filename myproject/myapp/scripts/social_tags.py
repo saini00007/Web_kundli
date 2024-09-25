@@ -51,30 +51,13 @@ def get_metadata(url):
         raise Exception(f'Error parsing metadata: {e}')
 
 def format_metadata(metadata):
-    theme_color = metadata.get('themeColor', 'N/A')
-    
-    if theme_color and theme_color.startswith('#'):
-        try:
-            # Convert the hex color code to its corresponding ANSI color code
-            theme_color_ansi = "\033[48;2;{};{};{}m".format(
-                int(theme_color[1:3], 16),
-                int(theme_color[3:5], 16),
-                int(theme_color[5:7], 16)
-            )
-            reset_color = "\033[0m"
-        except ValueError:
-            theme_color_ansi = ''
-            reset_color = ''
-    else:
-        theme_color_ansi = ''
-        reset_color = ''
-    
+  
     lines = [
         f"Title: {metadata.get('title', 'N/A')}",
         f"Description: {metadata.get('description', 'N/A')}",
         f"Keywords: {metadata.get('keywords', 'N/A')}",
         f"Canonical URL: {metadata.get('canonicalUrl', 'N/A')}",
-        f"Theme Color: {theme_color_ansi}{theme_color}{reset_color}",
+
         f"Twitter Site: {metadata.get('twitterSite', 'N/A')}"
     ]
 
